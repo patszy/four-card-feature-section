@@ -1,0 +1,215 @@
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+:root {
+    --color-red: hsl(0, 78%, 62%);
+    --color-cyan: hsl(180, 62%, 55%);
+    --color-orange: hsl(34, 97%, 64%);
+    --color-blue: hsl(212, 86%, 64%);
+    --color-very-dark-blue: hsl(234, 12%, 34%);
+    --color-greyish-blue: hsl(229, 6%, 66%);
+    --color-light-grey: hsl(0, 0%, 98%);
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 55%;
+}
+@media only screen and (min-width: 1440px){
+    html {
+        font-size: 70%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    html {
+        font-size: 45%;
+    }
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+@media only screen and (max-width: 800px) {
+    body {
+        height: 100%;
+    }
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    padding: 2.4rem;
+    border-top: 3px solid;
+    border-radius: 6px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    transition: all .2s;
+    animation: fadeIn .5s;
+}
+figure:hover {
+    transform: translateY(-1.4rem);
+}
+figure svg {
+    align-self: flex-end;
+    width: 5.6rem;
+    height: auto;
+    margin-top: auto;
+}
+figure.card-1 {
+    border-color: var(--color-cyan);
+}
+figure.card-2 {
+    border-color: var(--color-red);
+}
+figure.card-3 {
+    border-color: var(--color-orange);
+}
+figure.card-4 {
+    border-color: var(--color-blue);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 45rem;
+    margin: 0 auto;
+    height: 20rem;
+}
+@media only screen and (max-width: 600px){
+    header {
+        margin: 0 auto 30px;
+    }
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 31rem) 1fr;
+    grid-template-rows: 1fr repeat(4, 10rem) 1fr;
+    grid-gap: 2.5rem;
+}
+.card-1 {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 2;
+}
+.card-2 {
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 2;
+}
+.card-3 {
+    grid-column: 4 / span 1;
+    grid-row: 3 / span 2;
+}
+.card-4 {
+    grid-column: 3 / span 1;
+    grid-row: 4 / span 2;
+}
+@media only screen and (max-width: 900px){
+    main {
+        grid-template-columns: 1fr repeat(2, 30rem) 1fr;
+        grid-template-rows: 1fr repeat(2, 20rem) 1fr;
+    }
+    .card-1 {
+        grid-column: 2 / span 1;
+        grid-row: 2 / span 1;
+    }
+    .card-2 {
+        grid-column: 3 / span 1;
+        grid-row: 2 / span 1;
+    }
+    .card-3 {
+        grid-column: 2 / span 1;
+        grid-row: 3 / span 1;
+    }
+    .card-4 {
+        grid-column: 3 / span 1;
+        grid-row: 3 / span 1;
+    }
+}
+@media only screen and (max-width:600px){
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 50px;
+    }
+    main > figure {
+        width: 30rem;
+        height: 20rem;
+    }
+}
+
+footer {
+    position: absolute;
+    bottom: 2rem;
+    font-size: .7rem;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+}
+@media only screen and (max-width: 600px) {
+    .attribution {
+        display: none;
+    }
+}
+
+h1 {
+    color: var(--color-very-dark-blue);
+    font-size: 3.2rem;
+}
+
+.h1-light {
+    font-weight: 200;
+    animation: fadeIn 1s, moveInLeft 1s;
+}
+
+.h1-bold {
+    font-weight: 600;
+    animation: fadeIn 1s, moveInRight 1s;
+    margin-bottom: 1.4rem;
+}
+
+h2 {
+    color: var(--color-very-dark-blue);
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: .8rem;
+}
+
+p {
+    color: var(--color-greyish-blue);
+    font-size: 1.2rem;
+}
+
+p.subheading {
+    color: var(--color-greyish-blue);
+    font-size: 1.4rem;
+    text-align: center;
+    animation: fadeIn 3s;
+}
+@media only screen and (max-width: 350px) {
+    p.subheading {
+        font-size: inherit;
+    }
+}
