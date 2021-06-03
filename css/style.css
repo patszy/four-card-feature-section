@@ -160,10 +160,17 @@ main {
         height: 20rem;
     }
 }
+@media only screen and (max-width: 350px){
+    main > figure {
+        width: 80vw;
+    }
+}
 
 footer {
     position: absolute;
     bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: .7rem;
     animation-name: fadeIn;
     animation-duration: 1s;
@@ -208,8 +215,11 @@ p.subheading {
     text-align: center;
     animation: fadeIn 3s;
 }
-@media only screen and (max-width: 350px) {
-    p.subheading {
-        font-size: inherit;
+@media only screen and (max-width: 350px){
+    h1 {
+        font-size: 7vw;
+    }
+    header {
+        width: 80vw;
     }
 }
